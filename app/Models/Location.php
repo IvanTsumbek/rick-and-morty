@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
-    //
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    } 
 }
