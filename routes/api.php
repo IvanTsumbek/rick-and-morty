@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Episode\EpisodeController;
 use App\Http\Controllers\Location\LocationController;
+use App\Http\Controllers\Character\CharacterController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -14,3 +15,6 @@ Route::get('/location/{id}', [LocationController::class, 'show']);
 
 Route::get('/episode', [EpisodeController::class, 'index']);
 Route::get('/episode/{id}', [EpisodeController::class, 'show']);
+
+Route::get('/character', [CharacterController::class, 'index']);
+Route::get('/character/{id}', [CharacterController::class, 'show']);

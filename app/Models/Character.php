@@ -11,9 +11,13 @@ class Character extends Model
         return $this->belongsToMany(Episode::class);
     }
 
-    public function locations()
+    public function origin()
     {
-        return $this->belongsToMany(Location::class);
-    } 
+        return $this->belongsTo(Location::class, 'origin_id');
+    }
 
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location_id');
+    }
 }
